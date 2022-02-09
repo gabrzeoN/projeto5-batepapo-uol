@@ -1,0 +1,55 @@
+*{
+  box-sizing: border-box;  
+}
+
+body{
+
+}
+
+header{
+   background-color: aqua;
+
+   display: flex;
+   justify-content: space-between;
+   padding: 20px;
+
+   position: fixed;
+   top: 0px;
+   left: 0px;
+   right: 0px;
+}
+
+header img{
+    width: 75px;
+    height: 53px;
+    /* display: none; */
+}
+
+
+
+.people{
+    width: 75px;
+    height: 53px;
+}
+
+main{
+    background-color: blueviolet;
+    margin: 120px 0px;
+}
+
+/* main *{
+    margin-bottom: 10px;
+} */
+
+footer{
+    background-color: rgb(42, 102, 102);
+
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+ 
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
