@@ -1,0 +1,65 @@
+// function onlineStatus(){
+    // const promise = axios.post('https://mock-api.driven.com.br/api/v4/uol/status', participant);
+    // promise.then(online);
+    // promise.catch(nameNotPosted);
+// }
+
+// function online(response){
+//     // console.log(response.data);
+//     console.log("nome vai ficar no servidor");
+// }
+
+
+
+
+
+// ---------------------------------- PARTICIPANTS -------------------
+// function searchParticipants(){
+//     const promise = axios.get("https://mock-api.driven.com.br/api/v4/uol/participants");
+//     promise.then(participantsFound);
+//     promise.catch(participantsNotFound);
+// }
+
+// function participantsFound(response){
+//     responseParticipantData = response.data
+//     console.log(response.data);
+//     validateName();
+// }
+
+// function participantsNotFound(error){
+//     console.log(error.response);
+// }
+
+// function validateName(){
+//     // let name = prompt("Insira seu nome:");
+//     let name = "BBBBBBBBBBBBBBBBBBBB";
+//     while(invalidName(name)){
+//         alert("Nome já existe, por favor escolha outro.");
+//         name = prompt("Insira seu nome:");
+//     }
+//     const participant = {name: name};
+//     const promise = axios.post('https://mock-api.driven.com.br/api/v4/uol/participants', participant);
+//     promise.then(namePosted);
+//     promise.catch(nameNotPosted);
+// }
+
+// function invalidName(checkName){
+//     if(checkName === null || checkName === "" || checkName === undefined){
+//         return true;
+//     }
+//     for(let i = 0; i < responseParticipantData.length; i++){
+//         if(checkName === responseParticipantData.name){
+//             console.log("aa");
+//             return true;
+//         }
+//     }
+//     return false;
+// }
+
+// function namePosted(response){
+//     console.log(response.data);
+// }
+
+// function nameNotPosted(error){
+//     console.log(error.response);
+// }
