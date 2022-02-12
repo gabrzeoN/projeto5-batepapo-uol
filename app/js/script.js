@@ -53,30 +53,31 @@ function showAllMessages(response){
             console.log("Algo deu errado com o tipo da mensagem.");
             console.log(response.data[i]);
         }
+        // document.querySelector('.message').scrollIntoView();
     }
 }
 
 function showStatusMessage(message){
     main.innerHTML += `
-    <p class="status-message"><time>(${message.time}) </time><strong>${message.from} </strong>${message.text}</p>
+    <p class="status-message message"><time>(${message.time}) </time><strong>${message.from} </strong>${message.text}</p>
     `;
 }
 
 function showNormalMessage(message){
     main.innerHTML += `
-    <p class="normal-message"><time>(${message.time}) </time><strong>${message.from} </strong>para <strong>${message.to}: </strong>${message.text}</p>
+    <p class="normal-message message"><time>(${message.time}) </time><strong>${message.from} </strong>para <strong>${message.to}: </strong>${message.text}</p>
     `;
 }
 
 function showReservedMessage(message){
     main.innerHTML += `
-    <p class="reserved-message"><time>(${message.time}) </time><strong>${message.from} </strong>reservadamente para <strong>${message.to}: </strong>${message.text}</p>
+    <p class="reserved-message message"><time>(${message.time}) </time><strong>${message.from} </strong>reservadamente para <strong>${message.to}: </strong>${message.text}</p>
     `;
 }
 
 // login("BBBBBBBBBBBBBBBBBBB");
 // login(null);
-// login(prompt("Escolha um nome: "));
+login(prompt("Escolha um nome: "));
 // login("");
 // searchParticipants();
 // searchMessages();
