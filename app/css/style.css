@@ -3,6 +3,7 @@
 }
 
 body{
+    /* position: relative; */
     background-color: #F3F3F3;
     font-family: 'Roboto', sans-serif;
 }
@@ -105,7 +106,30 @@ footer p{
 footer ion-icon{
     font-size: 40px;
     font-size: 35px;
-    /* background-color: rebeccapurple; */
+}
+
+aside{
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+aside .transparent-area{
+    background-color: rgba(5, 2, 2, 0.493);
+    width: 40%;
+    height: 100%;
+}
+
+aside .aside-bar{
+    background-color: rgba(255, 255, 255, 1);
+    width: 60%;
+    height: 100%;
 }
 
 .hidden{

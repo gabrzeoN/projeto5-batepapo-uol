@@ -1,5 +1,14 @@
 const main = document.querySelector("main");
-let participant = {};
+let participants = [];
+let participant = {
+    name: null
+};
+let message = {
+    from: null,
+    to: "Todos",
+    text: null,
+    type: "message"
+};
 
 // ---------------------------------- PARTICIPANTS -------------------
 function login(username){
@@ -10,9 +19,12 @@ function login(username){
 }
 
 function namePosted(response){
+    message.from = participant.name;
     setInterval(function(){
         axios.post('https://mock-api.driven.com.br/api/v4/uol/status', participant);
     }, 5000);
+    searchAllParticipants();
+    setInterval(searchAllParticipants, 10000);
     searchAllMessages();
     setInterval(searchAllMessages, 3000);
 }
@@ -75,12 +87,56 @@ function showReservedMessage(message){
     `;
 }
 
-// login("BBBBBBBBBBBBBBBBBBB");
-// login(null);
+function sendMessage(){
+    message.text = document.querySelector("footer .text input").value;
+    document.querySelector("footer .text input").value="";
+    const promisse = axios.post('https://mock-api.driven.com.br/api/v4/uol/messages', message);
+    promisse.then(searchAllMessages);
+    promisse.catch(function(){
+        alert("Usuário não está online!");
+        window.location.reload()
+    });
+}
+
+// ---------------------------------- PARTICIPANTS -------------------
+function searchAllParticipants(){
+    const promisse = axios.get('https://mock-api.driven.com.br/api/v4/uol/participants');
+    promisse.then(showAllParticipants);
+    promisse.catch(participantNotFound);
+}
+
+function participantNotFound(error){
+    console.log("Function searchAllParticipants");
+    console.log("Status code: " + error.response.status);
+	console.log("Error message: " + error.response.data);
+}
+
+function showAllParticipants(response){
+    participants = response.data;
+}
+
+function openSidebar(){
+    document.querySelector("aside").classList.remove("hidden");
+}
+
+function closeSidebar(){
+    document.querySelector("aside").classList.add("hidden");
+}
+
 login(prompt("Escolha um nome: "));
-// login("");
-// searchParticipants();
-// searchMessages();
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

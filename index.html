@@ -16,13 +16,40 @@
 <body>
     <header>
         <img src="app/img/logo.png" alt="Logo">
-        <ion-icon class="people" name="people"></ion-icon>
+        <ion-icon onclick="openSidebar()" class="people" name="people"></ion-icon>
     </header>
     <main>
-        <p class="status-message"><span>(00:00:00) </span><strong>Maria </strong>entrou na sala...</p>
+        <!-- <p class="status-message"><span>(00:00:00) </span><strong>Maria </strong>entrou na sala...</p>
         <p class="normal-message"><span>(00:00:00) </span><strong>João </strong>para <strong>Maria: </strong>Oia a bonitinha</p>
-        <p class="reserved-message"><span>(00:00:00) </span><strong>Rick </strong>reservadamente para <strong>Morty: </strong>vc é inútil, morty</p>
+        <p class="reserved-message"><span>(00:00:00) </span><strong>Rick </strong>reservadamente para <strong>Morty: </strong>vc é inútil, morty</p> -->
     </main>
+    <aside class="hidden">
+        <div onclick="closeSidebar()" class="transparent-area"></div>
+        <div class="aside-bar">
+            <section class="contacts">
+                <p>Escolha um contato para enviar mensagem:</p>
+                <ul>
+                    <li>
+                        <ion-icon name="person-circle"></ion-icon>
+                        Ana
+                    </li>
+                </ul>
+            </section>
+            <section class="visibility">
+                <p>Escolha a visibilidade</p>
+                <ul>
+                    <li>
+                        <ion-icon name="lock-open"></ion-icon>
+                        Público
+                    </li>
+                    <li>
+                        <ion-icon name="lock-closed"></ion-icon>
+                        Reservadamente
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </aside>
     <footer>
         <div class="text">
             <input type="text" placeholder="Escreva aqui...">
