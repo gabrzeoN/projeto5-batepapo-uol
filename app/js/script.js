@@ -1,5 +1,4 @@
 const main = document.querySelector("main");
-let allMessagesLoaded = false;
 let participant = {};
 
 // ---------------------------------- PARTICIPANTS -------------------
@@ -14,6 +13,7 @@ function namePosted(response){
     setInterval(function(){
         axios.post('https://mock-api.driven.com.br/api/v4/uol/status', participant);
     }, 5000);
+    searchAllMessages();
     setInterval(searchAllMessages, 3000);
 }
     
@@ -30,12 +30,7 @@ function nameNotPosted(error){
 // ---------------------------------- MESSAGES -------------------
 function searchAllMessages(){
     const promise = axios.get("https://mock-api.driven.com.br/api/v4/uol/messages");
-    if(!allMessagesLoaded){
-        promise.then(showAllMessages);
-        allMessagesLoaded = true;
-    }else{
-        promise.then(showNewMessages);
-    }
+    promise.then(showAllMessages);
     promise.catch(messagesNotFound);
 }
 
@@ -46,6 +41,7 @@ function messagesNotFound(error){
 }
 
 function showAllMessages(response){
+    main.innerHTML = "";
     for(let i = 0; i < response.data.length; i++){
         if(response.data[i].type === "status"){
             showStatusMessage(response.data[i]);
@@ -53,43 +49,32 @@ function showAllMessages(response){
             showNormalMessage(response.data[i]); 
         }else if(response.data[i].type === "private_message"){
             showReservedMessage(response.data[i]);
-        }else{// ERROR CONTROL
+        }else{
             console.log("Algo deu errado com o tipo da mensagem.");
             console.log(response.data[i]);
         }
     }
 }
 
-function showNewMessages(response){
-    let i = 100;
-    while(response.data[i] === ){
-
-    }
-    
-}
-
-
-
-// FROM TO TEXT TYPE TIME
 function showStatusMessage(message){
     main.innerHTML += `
-    <p class="status-message"><span>(${message.time}) </span><strong>${message.from} </strong>${message.text}</p>
+    <p class="status-message"><time>(${message.time}) </time><strong>${message.from} </strong>${message.text}</p>
     `;
 }
 
 function showNormalMessage(message){
     main.innerHTML += `
-    <p class="normal-message"><span>(${message.time}) </span><strong>${message.from} </strong>para <strong>${message.to}: </strong>${message.text}</p>
+    <p class="normal-message"><time>(${message.time}) </time><strong>${message.from} </strong>para <strong>${message.to}: </strong>${message.text}</p>
     `;
 }
 
 function showReservedMessage(message){
     main.innerHTML += `
-    <p class="reserved-message"><span>(${message.time}) </span><strong>${message.from} </strong>reservadamente para <strong>${message.to}: </strong>${message.text}</p>
+    <p class="reserved-message"><time>(${message.time}) </time><strong>${message.from} </strong>reservadamente para <strong>${message.to}: </strong>${message.text}</p>
     `;
 }
 
-login("BBBBBBBBBBBBBBBBBBB");
+// login("BBBBBBBBBBBBBBBBBBB");
 // login(null);
 // login(prompt("Escolha um nome: "));
 // login("");
