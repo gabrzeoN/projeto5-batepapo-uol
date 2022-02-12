@@ -33,8 +33,24 @@ header img{
 }
 
 main{
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
     margin: 120px 0px;
+}
+
+main .status-message{
+    background-color: #DCDCDC;
+}
+
+main .normal-message{
+    background-color:   #FFFFFF;
+}
+
+main .reserved-message{
+    background-color: #FFDEDE;
+}
+
+strong{
+    font-weight: bold;
 }
 
 /* main *{
