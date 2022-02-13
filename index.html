@@ -16,7 +16,7 @@
 <body>
     <header>
         <img src="app/img/logo.png" alt="Logo">
-        <ion-icon onclick="openSidebar()" class="people" name="people"></ion-icon>
+        <ion-icon onclick="openSidebar()" name="people"></ion-icon>
     </header>
     <main>
         <!-- <p class="status-message"><span>(00:00:00) </span><strong>Maria </strong>entrou na sala...</p>
@@ -27,24 +27,22 @@
         <div onclick="closeSidebar()" class="transparent-area"></div>
         <div class="aside-bar">
             <section class="contacts">
-                <p>Escolha um contato para enviar mensagem:</p>
+                <h1>Escolha um contato para enviar mensagem:</h1>
                 <ul>
-                    <li>
-                        <ion-icon name="person-circle"></ion-icon>
-                        Ana
-                    </li>
+                   
                 </ul>
             </section>
             <section class="visibility">
-                <p>Escolha a visibilidade</p>
+                <h1>Escolha a visibilidade:</h1>
                 <ul>
-                    <li>
+                    <li data-identifier="visibility">
                         <ion-icon name="lock-open"></ion-icon>
-                        Público
+                        <p>Público</p>
+                        <ion-icon name="checkmark-outline"></ion-icon>
                     </li>
-                    <li>
+                    <li data-identifier="visibility">
                         <ion-icon name="lock-closed"></ion-icon>
-                        Reservadamente
+                        <p>Reservadamente</p>
                     </li>
                 </ul>
             </section>
@@ -53,9 +51,9 @@
     <footer>
         <div class="text">
             <input type="text" placeholder="Escreva aqui...">
-            <p class="">Destinatário da mensagem</p>
+            <p class="">Enviando para todos</p>
         </div>
-        <ion-icon onclick="sendMessage()" name="paper-plane-outline"></ion-icon>
+        <ion-icon data-identifier="send-message" onclick="sendMessage()" name="paper-plane-outline"></ion-icon>
     </footer>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

@@ -60,7 +60,9 @@ function showAllMessages(response){
         }else if(response.data[i].type === "message"){
             showNormalMessage(response.data[i]); 
         }else if(response.data[i].type === "private_message"){
-            showReservedMessage(response.data[i]);
+            if(response.data[i].from === participant.name || response.data[i].to === participant.name){
+                showReservedMessage(response.data[i]);
+            }
         }else{
             console.log("Algo deu errado com o tipo da mensagem.");
             console.log(response.data[i]);
@@ -71,19 +73,19 @@ function showAllMessages(response){
 
 function showStatusMessage(message){
     main.innerHTML += `
-    <p class="status-message message"><time>(${message.time}) </time><strong>${message.from} </strong>${message.text}</p>
+    <p data-identifier="message" class="status-message message"><time>(${message.time}) </time><strong>${message.from} </strong>${message.text}</p>
     `;
 }
 
 function showNormalMessage(message){
     main.innerHTML += `
-    <p class="normal-message message"><time>(${message.time}) </time><strong>${message.from} </strong>para <strong>${message.to}: </strong>${message.text}</p>
+    <p data-identifier="message" class="normal-message message"><time>(${message.time}) </time><strong>${message.from} </strong>para <strong>${message.to}: </strong>${message.text}</p>
     `;
 }
 
 function showReservedMessage(message){
     main.innerHTML += `
-    <p class="reserved-message message"><time>(${message.time}) </time><strong>${message.from} </strong>reservadamente para <strong>${message.to}: </strong>${message.text}</p>
+    <p data-identifier="message" class="reserved-message message"><time>(${message.time}) </time><strong>${message.from} </strong>reservadamente para <strong>${message.to}: </strong>${message.text}</p>
     `;
 }
 
@@ -113,6 +115,23 @@ function participantNotFound(error){
 
 function showAllParticipants(response){
     participants = response.data;
+    const contacts = document.querySelector(".contacts ul");
+    contacts.innerHTML = `
+    <li data-identifier="participant">
+        <ion-icon name="people"></ion-icon>
+        <p>Todos</p>
+        <ion-icon name="checkmark-outline"></ion-icon>
+    </li>
+    `;
+    for(let i = 0; i < response.data.length; i++){
+        contacts.innerHTML += `
+        <li data-identifier="participant">
+            <ion-icon name="person-circle"></ion-icon>
+            <p>${response.data[i].name}</p>
+        </li>
+        `;
+    }
+
 }
 
 function openSidebar(){

@@ -27,7 +27,7 @@ header img{
     /* display: none; */
 }
 
-.people{
+header ion-icon{
     width: 75px;
     height: 53px;
 }
@@ -130,6 +130,51 @@ aside .aside-bar{
     background-color: rgba(255, 255, 255, 1);
     width: 60%;
     height: 100%;
+    overflow-y: scroll;
+}
+
+aside section{
+    /* background-color: red; */
+    margin: 20px 20px;
+    font-size: 16px;
+    line-height: 19px;
+    
+}
+
+aside h1{
+    /* background-color: green; */
+    padding: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+aside p{
+    margin-left: 30px;
+    margin-top: 10px;
+    line-height: 25px;
+    /* background-color: yellow; */
+    overflow-x: hidden;
+}
+
+aside li{
+    /* background-color: yellow; */
+    margin-top: 8px;
+    position: relative;
+}
+
+li ion-icon:first-child{
+    font-size: 25px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+li ion-icon:last-child{
+    font-size: 20px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    color: green;
 }
 
 .hidden{
