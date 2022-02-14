@@ -67,7 +67,6 @@ function showAllMessages(response){
             console.log("Algo deu errado com o tipo da mensagem.");
             console.log(response.data[i]);
         }
-        // document.querySelector("body").scrollIntoView({block: "end"});
         main.scrollIntoView({block: "end"});
     }
 }
@@ -144,42 +143,3 @@ function closeSidebar(){
 }
 
 login(prompt("Escolha um nome: "));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //message.time;   //(00:00:00)
-    //message.from;   //Maria
-    //message.text;   //sai da sala...
-
-
-
-    //message.time;   //(00:00:00)
-    //message.from;   //Maria
-                    //para
-    //message.to;     //Todos
-                    //:
-    //message.text;   //Que dia quente!!
-
-
-    //message.time;   //(00:00:00)
-    //message.from;   //Maria
-                    //reservadamente para
-    //message.to;     //João
-                    //:
-    //message.text;   //João, eu te amio!!! amie-me back!

@@ -3,7 +3,6 @@
 }
 
 body{
-    /* position: relative; */
     background-color: #F3F3F3;
     font-family: 'Roboto', sans-serif;
 }
@@ -14,7 +13,6 @@ header{
    display: flex;
    justify-content: space-between;
    padding: 20px;
-
    position: fixed;
    top: 0px;
    left: 0px;
@@ -24,7 +22,6 @@ header{
 header img{
     width: 75px;
     height: 53px;
-    /* display: none; */
 }
 
 header ion-icon{
@@ -33,19 +30,15 @@ header ion-icon{
 }
 
 main{
-    /* background-color: blueviolet; */
-    /* margin: 115px 0px; */
     margin-top: 115px;
     margin-bottom: 0px;
     padding-bottom: 120px;
 }
 
 main .message{
-    /* border: 1px solid red; */
     margin-top: 4px;
     border-radius: 2px;
     padding: 12px 8px;
-    
     font-size: 14px;
     line-height: 20px;
 }
@@ -68,46 +61,6 @@ time{
 
 strong{
     font-weight: bold;
-}
-
-/* main *{
-    margin-bottom: 10px;
-} */
-
-footer{
-    background-color: white;
-    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
-
-    display: flex;
-    /* display: none; */
-    justify-content: space-between;
-    padding: 20px;
- 
-    position: fixed;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-}
-
-footer input{
-    margin-bottom: 3px;
-    border: none;
-    size: 50px;
-    font-style: italic;
-    font-size: 18px;
-    line-height: 25px;
-    width: 300px;
-}
-
-footer p{
-    font-size: 14px;
-    line-height: 25px;
-    color: #AAAAAA;
-}
-
-footer ion-icon{
-    font-size: 40px;
-    font-size: 35px;
 }
 
 aside{
@@ -136,15 +89,12 @@ aside .aside-bar{
 }
 
 aside section{
-    /* background-color: red; */
     margin: 20px 20px;
     font-size: 16px;
     line-height: 19px;
-    
 }
 
 aside h1{
-    /* background-color: green; */
     padding: 20px;
     font-weight: bold;
     text-align: center;
@@ -154,12 +104,10 @@ aside p{
     margin-left: 30px;
     margin-top: 10px;
     line-height: 25px;
-    /* background-color: yellow; */
     overflow-x: hidden;
 }
 
 aside li{
-    /* background-color: yellow; */
     margin-top: 8px;
     position: relative;
 }
@@ -177,6 +125,39 @@ li ion-icon:last-child{
     right: 0px;
     top: 0px;
     color: green;
+}
+
+footer{
+    background-color: white;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+footer input{
+    margin-bottom: 3px;
+    border: none;
+    size: 50px;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 25px;
+    width: 300px;
+}
+
+footer p{
+    font-size: 14px;
+    line-height: 25px;
+    color: #AAAAAA;
+}
+
+footer ion-icon{
+    font-size: 40px;
+    font-size: 35px;
 }
 
 .hidden{
