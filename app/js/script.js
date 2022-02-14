@@ -67,7 +67,8 @@ function showAllMessages(response){
             console.log("Algo deu errado com o tipo da mensagem.");
             console.log(response.data[i]);
         }
-        // document.querySelector('.message').scrollIntoView();
+        // document.querySelector("body").scrollIntoView({block: "end"});
+        main.scrollIntoView({block: "end"});
     }
 }
 
